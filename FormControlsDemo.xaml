@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiControles.FormControlsDemo"
+             Title="FormControlsDemo">
+    <ScrollView>
+        <StackLayout>
+
+            <Label 
+            Text="Componente button"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />       
+            <Button
+                x:Name="btntest"
+                Text="Clique Me!"
+                Clicked="btntest_Clicked"
+                />
+            <Label 
+            Text="Componente button Image"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+
+            <ImageButton Source="icon_green.png" Clicked="btntest_Clicked" />
+            <Label 
+            Text="Componente radio"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+            
+            <RadioButton
+                CheckedChanged="RadioButton_CheckedChanged"
+                Content="Option 1"
+                x:Name="rd1"
+                GroupName="gr1"
+                />
+
+
+            <RadioButton
+                CheckedChanged="RadioButton_CheckedChanged"
+                Content="Option 2"
+                x:Name="rd2"
+                GroupName="gr1"
+                />
+
+            <Label 
+            Text="Componente de busca"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+            <SearchBar 
+                x:Name="searchControl"
+                SearchButtonPressed="searchControl_SearchButtonPressed"
+                
+                />
+
+            <Label 
+            Text="Wipe View"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+
+            <SwipeView>
+                <SwipeView.LeftItems>
+                    <SwipeItems>
+                        <SwipeItem
+                            BackgroundColor="LightBlue"
+                            IconImageSource="dotnet_bot.svg"
+                            Invoked="SwipeItem_Invoked"
+                            Text="Favorite"
+                            />
+                        <SwipeItem
+                            BackgroundColor="LightCyan"
+                            IconImageSource="dotnet_bot.svg"
+                            Invoked="SwipeItem_Invoked"
+                            Text="Favorite"
+                            />
+                    </SwipeItems>
+                </SwipeView.LeftItems>
+
+                <Grid BackgroundColor="Beige"
+                      
+                      HeightRequest="60"
+                      WidthRequest="300"
+                      
+                      >
+                    <Label 
+            Text="Swipe right"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+                </Grid>
+                    
+            </SwipeView>
+
+            <Label 
+            Text="CheckBox"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+            <CheckBox x:Name="chkTest" IsChecked="True" />
+            <Label 
+            Text="Slider"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+            <Slider
+                x:Name="slider"
+                Minimum="0"
+                Maximum="10"
+                MinimumTrackColor="Yellow"
+                MaximumTrackColor="Green"
+                ThumbColor="DarkRed"
+                ValueChanged="slider_ValueChanged"
+                
+                />
+            <Label 
+            Text="0"
+                x:Name="lblslider"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+
+            <Label 
+            Text="Stepper"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+
+            <Stepper 
+                x:Name="stepper"
+                ValueChanged="stepper_ValueChanged"
+                Maximum="10"
+                Minimum="0"
+                Increment="1"
+                />
+
+            <Label 
+            Text="0"
+                x:Name="lblStepper"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+
+            <Label 
+            Text="Switch"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+            <Switch  IsToggled="True" ></Switch>
+
+            <Label 
+            Text="Date Picker"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+
+            <DatePicker></DatePicker>
+
+            <Label 
+            Text="Time Picker"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+
+            <TimePicker></TimePicker>
+            <Label 
+            Text="Entry"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+            <Entry
+                x:Name="txtEntry"
+                Placeholder="Observação"
+                PlaceholderColor="Coral"
+                TextChanged="Entry_TextChanged"
+                Completed="txtEntry_Completed"
+                />
+
+            <Label 
+            Text="ActiveIndicator"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+            <ActivityIndicator 
+                Color="Blue"
+                IsRunning="True"
+                />
+
+            <Label 
+            Text="Progress Bar"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+            <ProgressBar 
+                
+                Progress=".5"
+                />
+
+            <Label 
+            Text="Carrocel"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+
+            <CarouselView IndicatorView="indicatorView">
+                <CarouselView.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>mono</x:String>
+                        <x:String>Android</x:String>
+                        <x:String>Mac</x:String>
+                        <x:String>Microsoft</x:String>
+                        <x:String>Pc</x:String>
+                    </x:Array>
+                </CarouselView.ItemsSource>
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Frame
+                                Margin="20"
+                                BorderColor="DarkGray"
+                                CornerRadius="5"
+                                HasShadow="True"
+                                HeightRequest="100"
+                                HorizontalOptions="Center"
+                                VerticalOptions="CenterAndExpand"
+                                
+                                >
+                                <Label Text="{Binding .}" >
+                                    
+                                </Label>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                 
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+            <IndicatorView 
+                x:Name="indicatorView"
+                HorizontalOptions="Center"
+                IndicatorColor="LightCyan"
+                SelectedIndicatorColor="DarkCyan"
+                />
+            <Label 
+            Text="CollectionView"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+            <CollectionView SelectionMode="Multiple" >
+                <CollectionView.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>mono</x:String>
+                        <x:String>Android</x:String>
+                        <x:String>Mac</x:String>
+                        <x:String>Microsoft</x:String>
+                        <x:String>Pc</x:String>
+                    </x:Array>
+                </CollectionView.ItemsSource>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Frame
+                                Margin="20"
+                                BorderColor="DarkGray"
+                                CornerRadius="5"
+                                HasShadow="True"
+                                HeightRequest="100"
+                                HorizontalOptions="Center"
+                                VerticalOptions="CenterAndExpand"
+                                
+                                >
+                                <Label Text="{Binding .}" >
+
+                                </Label>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Label 
+            Text="Picker"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+            <Picker VerticalOptions="Center"  >
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>mono</x:String>
+                        <x:String>Android</x:String>
+                        <x:String>Mac</x:String>
+                        <x:String>Microsoft</x:String>
+                        <x:String>Pc</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <Label 
+            Text="Table View"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+
+            <TableView Intent="Settings">
+                <TableRoot>
+                    <TableSection Title="First Section">
+                        <TextCell Detail="TextCell Detail" Text="TextCell" />
+                        <EntryCell Label="Entry Label" Text="EntryCell Text" />
+                        <SwitchCell Text="SwitchCell Text" />
+                        <ImageCell
+                    Detail="ImageCell Detail"
+                    ImageSource="dotnet_bot.svg"
+                    Text="ImageCell Text" />
+                    </TableSection>
+                    <TableSection Title="Second Section">
+                        <TextCell Detail="TextCell Detail" Text="TextCell" />
+                        <EntryCell Label="Entry Label" Text="EntryCell Text" />
+                        <SwitchCell Text="SwitchCell Text" />
+                        <ImageCell
+                    Detail="ImageCell Detail"
+                    ImageSource="dotnet_bot.svg"
+                    Text="ImageCell Text" />
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+
+            <Label 
+            Text="List View"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+
+            <ListView >
+                <ListView.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>mono</x:String>
+                        <x:String>monodroid</x:String>
+                        <x:String>monotouch</x:String>
+                        <x:String>monorail</x:String>
+                        <x:String>monodevelop</x:String>
+                        <x:String>monotone</x:String>
+                        <x:String>monopoly</x:String>
+                        <x:String>monomodal</x:String>
+                        <x:String>mononucleosis</x:String>
+                    </x:Array>
+                </ListView.ItemsSource>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Frame
+                            Margin="20"
+                            BorderColor="DarkGray"
+                            CornerRadius="5"
+                            HasShadow="True"
+                            HeightRequest="100"
+                            HorizontalOptions="Center"
+                            VerticalOptions="CenterAndExpand">
+                                    <Label VerticalTextAlignment="Center" Text="{Binding .}" />
+                                </Frame>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+
+    </ScrollView>
+   
+</ContentPage>
